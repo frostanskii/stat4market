@@ -1,0 +1,48 @@
+// Заголовки, общие БЄМ блоки и проче...
+.breadcrumbs {
+   margin-bottom: rem(15);
+   
+   @media (max-width: em(1670)){
+      margin-left: rem(25); 
+   }
+   @media (max-width:$mobile){
+      margin-left: 0;
+   }
+   @media (max-width: $mobileSmall) {
+      @include adaptiveValue("margin-bottom", 44, 20, 360, 320, 1);
+   }
+   &__list {
+      display: flex;
+      align-items: center;
+   }
+
+   &__item {
+      position: relative;
+      font-size: rem(16);
+      line-height: math.div(19, 16);
+      color: rgba(51, 26, 47, 0.5);
+      &:not(:first-child) {
+         padding-left: rem(18);
+         margin-left: rem(8);
+         &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: rem(10);
+            height: rem(1);
+            background: rgba(51, 26, 47, 0.5);
+         }
+      }
+   }
+   &__link {
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            color: $pink;
+         }
+      }
+   }
+   &__name {
+   }
+}
